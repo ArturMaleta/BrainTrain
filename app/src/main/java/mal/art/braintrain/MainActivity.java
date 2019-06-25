@@ -135,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
                 answers.add(a + b);
             } else {
                 int wrongAnswer = random.nextInt(41);
-                if(wrongAnswer == a + b) {
+                if(wrongAnswer == a + b || wrongAnswer == wrongAnswer) {
                     wrongAnswer = random.nextInt(41);
                 }
                 answers.add(wrongAnswer);
