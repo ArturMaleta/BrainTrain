@@ -101,7 +101,11 @@ public class MainActivity extends AppCompatActivity {
                 playAgainButton.setVisibility(View.VISIBLE);
                 playAgainButton.setEnabled(true);
                 resultTextView.setVisibility(View.VISIBLE);
-                resultTextView.setText("Congratulations, your score is " + correctAnswers);
+                if(correctAnswers == 0) {
+		resultTextView.setText("Your score is 0. You have  to try harder.");
+	      } else {
+		resultTextView.setText("Congratulations, your score is " + correctAnswers);
+	      }
                 answerButton1.setEnabled(false);
                 answerButton2.setEnabled(false);
                 answerButton3.setEnabled(false);
