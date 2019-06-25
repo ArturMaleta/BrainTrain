@@ -28,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
     Button playAgainButton;
     CountDownTimer gameTimer;
     int locationOfCorrectAnswer;
-    int correctAnswers;
-    int numberOfAnswers;
+    int correctAnswers = 0;
+    int numberOfAnswers = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -150,16 +150,15 @@ public class MainActivity extends AppCompatActivity {
 
         if(Integer.toString(locationOfCorrectAnswer).equals(view.getTag().toString())) {
             correctAnswers++;
-            numberOfAnswers++;
-        } else {
-            numberOfAnswers++;
         }
+        numberOfAnswers++;
         answersTextView.setText(correctAnswers + "/" + numberOfAnswers);
-
         singleTask();
     }
 
     public void playAgain(View view) {
+        correctAnswers = 0;
+        numberOfAnswers = 0;
         answersTextView.setText("0/0");
         playAgainButton.setVisibility(View.INVISIBLE);
         resultTextView.setVisibility(View.INVISIBLE);
